@@ -1,3 +1,5 @@
+import os
+
 import HMM
 
 if __name__=="__main__":
@@ -20,12 +22,8 @@ if __name__=="__main__":
                 test_results.append(result)
                 print("Observation: " + observation.strip())
                 print("Result: " + result)
-    with open("ambiguous_sents.tagged.obs") as actual:
-        count = 0
-        for tagged in actual:
-            if count % 2 == 0:
-                if test_results[count//2] != tagged.strip():
-                    print("Error: " + str(observed[count//2]))
-            count += 1
+    exec(open('alarm.py').read())
+    exec(open('carnet.py').read())
+
 
 
